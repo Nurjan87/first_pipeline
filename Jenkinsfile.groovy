@@ -16,6 +16,6 @@ node{
     }
 
     stage("Restart Apache"){
-      sh "ssh ec2-user@${my_env} sudo systemctl restart httpd && sudo systemctl enable httpd"
+      sh "ssh ec2-user@${my_env} sudo systemctl restart httpd"
     }
 }
