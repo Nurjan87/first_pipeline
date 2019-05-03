@@ -15,6 +15,6 @@ node{
     }
 
     stage("Restart Apache"){
-      sh "sudo systemctl restart httpd && systemctl enable httpd"
+      sh "systemctl restart httpd && systemctl enable httpd"
     }
 }
