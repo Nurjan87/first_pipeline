@@ -1,6 +1,7 @@
 node{
+  properties([pipelineTriggers([pollSCM('* * * * *')])])
     stage("Pull Repo"){
-      git 'https://github.com/Nurjan87/cool_website.git'
+      git 'git@github.com:Nurjan87/cool_website.git'
     }
     stage("Install Web_Server"){
       sh "ssh ec2-user@3.19.27.36 sudo yum install httpd -y"
