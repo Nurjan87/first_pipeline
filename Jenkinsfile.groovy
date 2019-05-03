@@ -1,6 +1,6 @@
 node{
     stage("Pull Repo"){
-      git 'https://github.com/Nurjan87/first_pipeline.git'
+      git 'https://github.com/Nurjan87/cool_website.git'
     }
     stage("Install Web_Server"){
       sh "ssh ec2-user@3.19.27.36 sudo yum install httpd -y"
