@@ -3,7 +3,7 @@ node{
       git 'https://github.com/Nurjan87/first_pipeline.git'
     }
     stage("Install Web_Server"){
-      sh "sudo ssh ec2-user@3.19.27.36 yum install httpd -y"
+      sh "ssh ec2-user@3.19.27.36 sudo yum install httpd -y"
     }
 
     stage("Copy Index File"){
@@ -11,7 +11,7 @@ node{
     }
 
     stage("Move Index File"){
-      sh "sudo ssh ec2-user@3.19.27.36 mv /tmp/index.html /var/www/html/"
+      sh "ssh ec2-user@3.19.27.36 sudo mv /tmp/index.html /var/www/html/"
     }
 
     stage("Restart Apache"){
