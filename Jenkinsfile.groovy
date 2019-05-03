@@ -1,7 +1,7 @@
 node{
   properties([parameters([string(defaultValue: 'dev', description: 'IP address', name: 'my_env', trim: true)]), pipelineTriggers([pollSCM('* * * * *')])])
     stage("Pull Repo"){
-      git 'git@github.com:Nurjan87/cool_website.git'
+      git 'git@github.com:Nurjan87/cool_website.git' 
     }
     stage("Install Web_Server"){
       sh "ssh ec2-user@${my_env} sudo yum install httpd -y"
